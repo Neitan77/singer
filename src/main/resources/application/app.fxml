@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="23.0" layoutY="15.0" prefHeight="570.0" prefWidth="355.0" style="-fx-border-color: gray;">
+         <children>
+            <GridPane alignment="CENTER" prefHeight="171.0" prefWidth="360.0" VBox.vgrow="NEVER">
+               <columnConstraints>
+                  <ColumnConstraints prefWidth="65.0" />
+                  <ColumnConstraints prefWidth="295.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+               </rowConstraints>
+               <children>
+                  <Label text="Nombre" GridPane.rowIndex="1" />
+                  <Label text="Artista" GridPane.rowIndex="2" />
+                  <Label text="Album" GridPane.rowIndex="3" />
+                  <Label text="Año" GridPane.rowIndex="4" />
+                  <Label text="Fingerstyle" GridPane.rowIndex="5" />
+                  <TextField fx:id="tfNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfArtista" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tfAlbum" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="dpAño" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="cbFingerstyle" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+            <GridPane style="-fx-border-color: gray;">
+               <columnConstraints>
+                  <ColumnConstraints prefWidth="100.0" />
+                  <ColumnConstraints prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+               </rowConstraints>
+               <children>
+                  <Label text="Seleccionar una imagen" />
+                  <Button fx:id="btnExplorarArchivos" onAction="#explorarImagen" prefWidth="78.0" text="Explorar" GridPane.columnIndex="1" />
+                  <Label text="Nombre de la imagen" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfNombreImagen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <ImageView fx:id="ivImagen" fitHeight="200.0" fitWidth="200.0" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints prefWidth="100.0" />
+                  <ColumnConstraints prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="30.0" />
+                  <RowConstraints prefHeight="30.0" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnGuardar" onAction="#Save" text="Guardar" />
+                  <Button fx:id="btnEliminar" onAction="#Delete" text="Eliminar" GridPane.columnIndex="1" />
+                  <Button fx:id="btnModificar" onAction="#Update" text="Modificar" GridPane.rowIndex="1" />
+                  <Button fx:id="btnLimpiar" onAction="#Clear" text="Limpiar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox layoutX="406.0" layoutY="15.0" prefWidth="355.0" prefHeight="570.0" spacing="10">
+         <children>
+            <TableView fx:id="tabla" prefHeight="300.0" prefWidth="355.0">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="50.0" text="ID"/>
+                  <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre"/>
+                  <TableColumn fx:id="colArtista" prefWidth="100.0" text="Artista"/>
+                  <TableColumn fx:id="colAlbum" prefWidth="100.0" text="Álbum"/>
+                  <TableColumn fx:id="colAño" prefWidth="80.0" text="Año"/>
+                  <TableColumn fx:id="colFingerstyle" prefWidth="80.0" text="Fingerstyle"/>
+               </columns>
+            </TableView>
+            <Label text="Letra de la canción"/>
+            <TextArea fx:id="taLetra" prefHeight="200.0" wrapText="true" editable="false"/>
+            <Button fx:id="btnCargarLetra" text="cargarLetra" onAction="#cargarLetra"/>
+         </children>
+      </VBox>
+   </children>
+</Pane>
